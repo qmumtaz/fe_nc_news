@@ -8,11 +8,9 @@ import { TiNews } from "react-icons/ti";
 function Header() {
   return (
     <div>
-       <Link to="/home" className='nav-links'><TiNews className='news-icon' /> </Link> 
+       <Link to="/" className='nav-links'><TiNews className='news-icon' /> </Link> 
        <h1>NC News</h1>
-      
-        <nav>
-  
+        <nav> 
         <Link to="/articles" className='nav-links'>Articles</Link> 
         </nav>
     </div>

@@ -1,0 +1,32 @@
+.article {
+    
+    max-width: 800px;
+    margin: 20px auto;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 20px;
+  }
+  
+  .article-header {
+ 
+    background-color: #f0f0f0;
+  }
+  
+  .article-body {
+    display: flex;
+   
+  }
+  
+  .article-image { 
+    margin-right: 20px;
+  }
+  
+  .article-image img {
+    height: 100%;
+    width: 100%;
+ 
+  }
+  
+  .article-text {
+    text-align: center;
+  }
