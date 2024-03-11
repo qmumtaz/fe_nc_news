@@ -1,20 +1,43 @@
 .article-card {
     border: 1px solid #ddd;
-    padding: 10px;
+    padding: 15px;
     margin: 10px;
     border-radius: 8px;
+    display: block;
   }
   
-  .author {
+
+  .article-author {
     font-weight: bold;
+    display: flex;
   }
   
-  .title {
-    margin-top: 5px;
+  .article-title {
+    margin: 15px;
     font-size: 1.2em;
   }
   
   .topic {
     color: #888;
-    margin-top: 5px;
+    margin: 10px;
+  }
+
+  .article-date{
+   font-size: 8px;
+    margin: 5px;
+    color : #82959B;
+  }
+
+  .article-comment{
+    display: flex;
+  }
+  .article-icon{
+    margin-right:10px ;
+    margin-left: 10px;
+    
+  }
+  .article-counter{
+    font-size: 14px;
+   
+    
   }

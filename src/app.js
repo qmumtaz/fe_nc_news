@@ -17,5 +17,14 @@ const getArticleById = (id) => {
     })
 }
 
+const getCommentByArticleId = (id) => {
+    const url = `https://nc-news-9quh.onrender.com/api/articles/${id}/comments`;
 
-export {getAllArticles , getArticleById } 
+    return axios.get(url)
+    .then((response) => {
+        return response.data
+    })
+}
+
+
+export {getAllArticles , getArticleById, getCommentByArticleId } 
