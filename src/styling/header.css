@@ -1,0 +1,19 @@
+
+h1{
+    text-align: center;
+    
+}
+
+nav{
+    text-align: center;
+    justify-content: space-between;
+}
+
+.news-icon{
+    display: grid;
+    width: 50px;
+    height: 40px;
+    
+   
+    
+}
