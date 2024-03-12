@@ -38,4 +38,18 @@ const patchCommentByVotes = (comment_id , comment) => {
         })
 }
 
-export {getAllArticles , getArticleById, getCommentByArticleId , patchCommentByVotes} 
+const PostCommentByArticleId = (article_id, newComment) => {
+    const url = `https://nc-news-9quh.onrender.com/api/articles/${article_id}/comments`;
+    const comment = {
+        username : newComment.username,
+        body : newComment.body
+    }
+    console.log(comment);
+    return axios.post(url, comment)
+           .then((response) => {
+           console.log(response);
+    })
+
+}
+
+export {getAllArticles , getArticleById, getCommentByArticleId , patchCommentByVotes , PostCommentByArticleId} 

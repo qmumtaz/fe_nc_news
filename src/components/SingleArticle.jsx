@@ -4,6 +4,7 @@ import { getArticleById } from '../app';
 import "../styling/singlearticle.css"
 import Comments from './Comments';
 import Loading from './Loading';
+import {Link} from "react-router-dom"
 
 function SingleArticle() {
   const { article_id } = useParams();
@@ -38,7 +39,8 @@ function SingleArticle() {
        
       </div>
     </div>
-  <Comments articleId={article_id} />
+    <Link to={`/article/${article.article_id}/comments`} className='single-link'><button className='single-postcomment'> Post New Comment </button></Link>
+         <Comments articleId={article_id} />
     </>
   )
 }
