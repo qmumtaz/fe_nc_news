@@ -1,4 +1,11 @@
-p{
-    margin-top: 50px;
+.homepage{
     text-align: center;
+    margin: 20px;
+    
+}
+
+.main-text{
+
+    text-align: center;
+    display: inline;    
 }

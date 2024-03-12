@@ -26,5 +26,16 @@ const getCommentByArticleId = (id) => {
     })
 }
 
+const patchCommentByVotes = (comment_id , comment) => {
+    const url = `https://nc-news-9quh.onrender.com/api/comments/${comment_id}`;
+    const comments = {
+        inc_votes : comment.inc_votes
+    }
 
-export {getAllArticles , getArticleById, getCommentByArticleId } 
+    return axios.patch(url, comments)
+           .then((response) => {
+           return response
+        })
+}
+
+export {getAllArticles , getArticleById, getCommentByArticleId , patchCommentByVotes} 

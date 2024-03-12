@@ -7,11 +7,11 @@ import { TiNews } from "react-icons/ti";
 
 function Header() {
   return (
-    <div>
-       <Link to="/" className='nav-links'><TiNews className='news-icon' /> </Link> 
-       <h1>NC News</h1>
-        <nav> 
-        <Link to="/articles" className='nav-links'>Articles</Link> 
+    <div className='navbar'>
+       <Link to="/" ><TiNews className='news-icon' /> </Link> 
+       <h1 className='nav-header'>NC News</h1>
+        <nav className='nav-bar-links'> 
+        <Link to="/articles" >Articles</Link> 
         </nav>
     </div>
   )

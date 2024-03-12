@@ -26,19 +26,16 @@ function SingleArticle() {
   
   return (
     <>
-       <div className="article">
-      <div className="article-header">
-        <h1>{article.title}</h1>
-        <p> {article.author}</p>
-        <p> {article.topic}</p>
-      </div>
-      <div className="article-body">
-        <div className="article-image">
+       <div className="singleArticle">
+       <p className='single-author'> {article.author}</p>
+        <h1 className='single-title'>{article.title}</h1>
+      <span className='single-topic'> {article.topic}</span>
+      <div className="single-body"> 
+          <p className='single-body'>{article.body}</p>
+        <div className="single-image">
           <img src={article.article_img_url} alt="Article" />
         </div>
-        <div className="article-text">
-          <p>{article.body}</p>
-        </div>
+       
       </div>
     </div>
   <Comments articleId={article_id} />
