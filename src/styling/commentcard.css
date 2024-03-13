@@ -37,3 +37,15 @@
 .up-arrow {
     content: "\2191";
   }
+
+.comment-delete{
+    width: 50px;
+display: flex;
+margin-left: 10px;
+
+}
+
+.comment-delete button{
+
+
+}   

@@ -20,3 +20,36 @@
     height: 40px;
     
 }
+
+.header-user{
+    display: flex;
+    width: 10%;
+    flex-direction : column;
+    padding: 5px;
+    justify-content: center !important;
+    position: absolute;
+    top: 0%;
+    transform: translate(655px, 10%);
+   
+}
+
+.header-user img{
+    height: 30px;
+    width: 30%;
+    border-radius: 50%;
+    border: 1px solid black;
+    display: block !important;
+    margin-top: 10px;
+    margin-left: 50px;
+  display: block !important;
+    
+}
+
+.header-user p {
+    font-size: 10px;
+    height: 10px;
+    color: red;
+    margin: 0 10px;
+    font-weight: 800;
+    text-align: center;
+}

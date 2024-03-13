@@ -9,6 +9,7 @@ function PostComment() {
   const { article_id } = useParams();
   const [newUsername, setUsername] = useState("");
   const [inputBody, setBody] = useState("");
+  const [err, setErr] = useState(null);
 
   const navigate = useNavigate();
 
@@ -20,14 +21,14 @@ function PostComment() {
 const handleSubmit = (event) => {
     event.preventDefault();
 
-    PostCommentByArticleId(article_id, newComment)
+    PostCommentByArticleId(article_id, newComment).catch((err) => {
+        setErr('Something went wrong, please try again.');
+    })
     navigate(`/articles/${article_id}`)
 }
-  console.log(article_id);
-  console.log(newUsername);
-  console.log(inputBody);
-
  
+
+{err ? <p>{err}</p> : null}
   return (
     <div className="postComment" onSubmit={handleSubmit}>
       <form className="post-form">

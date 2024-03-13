@@ -44,12 +44,15 @@ const PostCommentByArticleId = (article_id, newComment) => {
         username : newComment.username,
         body : newComment.body
     }
-    console.log(comment);
-    return axios.post(url, comment)
-           .then((response) => {
-           console.log(response);
-    })
+    return axios.post(url, comment);
 
 }
 
-export {getAllArticles , getArticleById, getCommentByArticleId , patchCommentByVotes , PostCommentByArticleId} 
+const DeleteCommentById = (comment_id) => {
+    const url = `https://nc-news-9quh.onrender.com/api/comments/${comment_id}`;
+
+    return axios.delete(url);
+}
+
+
+export {getAllArticles , getArticleById, getCommentByArticleId , patchCommentByVotes , PostCommentByArticleId , DeleteCommentById} 
