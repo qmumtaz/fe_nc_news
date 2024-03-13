@@ -61,7 +61,7 @@ function Comments({articleId}) {
         <ul>
             {comments.map((comment) => {
                 {err ? <p>{err}</p> : null}
-                return <CommentCard comment={comment} setUpVote={setUpVote}  onDeleteComment={handleDeleteComment} />
+                return <CommentCard comment={comment} setUpVote={setUpVote}  onDeleteComment={handleDeleteComment} key={comment.comment_id} />
             })}
         </ul>
     </div>

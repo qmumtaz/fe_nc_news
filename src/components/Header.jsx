@@ -20,6 +20,7 @@ const {userLoggedIn} = useContext(UserContext)
       
         <nav className='nav-bar-links'> 
         <Link to="/articles" >Articles</Link> 
+        <Link to="/topic" >Topic</Link> 
         </nav>
     </div>
   )
