@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams  } from "react-router-dom";
 import { useNavigate  } from "react-router-dom";
 import "../styling/postcomment.css";
-import { PostCommentByArticleId } from "../app";
+import { postCommentByArticleId } from "../app";
 
 
 function PostComment() {
@@ -21,7 +21,7 @@ function PostComment() {
 const handleSubmit = (event) => {
     event.preventDefault();
 
-    PostCommentByArticleId(article_id, newComment).catch((err) => {
+    postCommentByArticleId(article_id, newComment).catch((err) => {
         setErr('Something went wrong, please try again.');
     })
     navigate(`/articles/${article_id}`)

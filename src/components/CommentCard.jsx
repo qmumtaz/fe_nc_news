@@ -3,7 +3,7 @@ import "../styling/commentcard.css"
 import SortDateBy from '../utils/sortDate'
 import { MdDelete } from "react-icons/md";
 import UserContext from './context/UserContext';
-import {DeleteCommentById} from "../app"
+import {deleteCommentById} from "../app"
 
 
 function CommentCard({comment, setUpVote, onDeleteComment}) {
@@ -14,7 +14,7 @@ function CommentCard({comment, setUpVote, onDeleteComment}) {
     event.preventDefault();
 
     if (comment.author === userLoggedIn.username) {
-      DeleteCommentById(comment.comment_id)
+      deleteCommentById(comment.comment_id)
         .catch((error) => {
           setErr('Something went wrong, please try again.');
         });

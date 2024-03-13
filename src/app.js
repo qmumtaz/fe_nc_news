@@ -38,7 +38,7 @@ const patchCommentByVotes = (comment_id , comment) => {
         })
 }
 
-const PostCommentByArticleId = (article_id, newComment) => {
+const postCommentByArticleId = (article_id, newComment) => {
     const url = `https://nc-news-9quh.onrender.com/api/articles/${article_id}/comments`;
     const comment = {
         username : newComment.username,
@@ -48,11 +48,11 @@ const PostCommentByArticleId = (article_id, newComment) => {
 
 }
 
-const DeleteCommentById = (comment_id) => {
+const deleteCommentById = (comment_id) => {
     const url = `https://nc-news-9quh.onrender.com/api/comments/${comment_id}`;
 
     return axios.delete(url);
 }
 
 
-export {getAllArticles , getArticleById, getCommentByArticleId , patchCommentByVotes , PostCommentByArticleId , DeleteCommentById} 
+export {getAllArticles , getArticleById, getCommentByArticleId , patchCommentByVotes , postCommentByArticleId , deleteCommentById} 
