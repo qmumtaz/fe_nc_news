@@ -44,6 +44,12 @@ function Comments({articleId}) {
     })
  }
 
+ const handleDeleteComment = (deletedCommentId) => {
+  setComments((currentComments) =>
+    currentComments.filter((comment) => comment.comment_id !== deletedCommentId)
+  );
+};
+
 
 
  if (loading) {
@@ -55,7 +61,7 @@ function Comments({articleId}) {
         <ul>
             {comments.map((comment) => {
                 {err ? <p>{err}</p> : null}
-                return <CommentCard comment={comment} setUpVote={setUpVote}  />
+                return <CommentCard comment={comment} setUpVote={setUpVote}  onDeleteComment={handleDeleteComment} />
             })}
         </ul>
     </div>
