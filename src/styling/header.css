@@ -1,16 +1,22 @@
 .navbar{
-  display: block;
+  
     
 }
 
 .nav-header{
-  
+  display: block;
     text-align: center;
  
 }
 
 .nav-bar-links{
     text-align: center;
+    display: flex;
+   justify-content: space-between;
+   
+    width: 100px;
+    transform: translate(655px, 10%);
+    right:45%;top:20%;
     
 }
 

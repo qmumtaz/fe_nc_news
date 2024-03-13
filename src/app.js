@@ -54,5 +54,14 @@ const deleteCommentById = (comment_id) => {
     return axios.delete(url);
 }
 
+const getTopic = () => {
+    const url = `https://nc-news-9quh.onrender.com/api/topics`
 
-export {getAllArticles , getArticleById, getCommentByArticleId , patchCommentByVotes , postCommentByArticleId , deleteCommentById} 
+    return axios.get(url)
+            .then((response) => {
+                return response.data.topics;
+    })
+}
+
+
+export {getAllArticles , getArticleById, getCommentByArticleId , patchCommentByVotes , postCommentByArticleId , deleteCommentById , getTopic} 
