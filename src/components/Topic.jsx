@@ -19,8 +19,6 @@ const filterTopic = (topic) => {
   
 }
 
-
-
   return (
     <div>
        <ul>{topics.map((topic) => {
