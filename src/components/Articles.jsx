@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import {getAllArticles} from "../app"
 import ArticleCard from './ArticleCard';
-import {Link} from "react-router-dom"
-
+import {Link} from "react-router-dom";
+import {useSearchParams} from "react-router-dom"
+import NativeSelect from '@mui/material/NativeSelect';
 import Loading from './Loading';
+import "../styling/article.css"
+
 
 function Articles() {
   const [articles, setArticles] = useState([]);
   const [loading, SetLoading] = useState(true);
-  const [sort_by, setSortBy] = useState("")
-  const [order, setOrder] = useState("")
-
+  let [searchParams, setSearchParams] = useSearchParams();
+  const [sort_by, setSortBy] = useState(searchParams.get("sort_by"))
+  const [order, setOrder] = useState(searchParams.get("order"))
+  
 
   useEffect(() => {
     SetLoading(true)
@@ -18,12 +22,8 @@ function Articles() {
       setArticles(response);
       SetLoading(false)
     });
-  }, [sort_by , order]);
+  }, [searchParams ]);
 
-
-  if (loading) {
-    return <Loading />
-  }
 
   const sortArticle = (event) => {
     const selectedSort = event.target.value;
@@ -31,6 +31,7 @@ function Articles() {
     setSortBy("");
   } else {
     setSortBy(selectedSort);
+    setSearchParams({sort_by : selectedSort , order : order})
   }
   };
 
@@ -38,25 +39,29 @@ function Articles() {
     event.preventDefault();
     const orderBy = event.target.value;
     setOrder(orderBy);
+    setSearchParams({sort_by : sort_by , order : orderBy})
   };
 
-
+  if (loading) {
+    return <Loading />
+  }
 
   return (
     <>
     <section>
-    <select
+   
+    <NativeSelect
         name=""
         id="drop-down"
         onChange={sortArticle}
         value={sort_by}
         className="select-form"
       >
-        <option value="all">All</option>
-        <option value="votes">Votes</option>
-        <option value="created_at">Date</option>
-      </select>
-      <select
+        <option  value="all">All</option >
+        <option  value="votes">Votes</option >
+        <option  value="created_at">Date</option >
+      </NativeSelect>
+      <NativeSelect
         name=""
         id="drop-down"
         onChange={orderByArticle}
@@ -64,10 +69,11 @@ function Articles() {
         className="select-form"
       >
         
-        <option value="desc">Descending</option>
-        <option value="asc">Ascending</option>
-      </select>
+        <option  value="desc">Descending</option >
+        <option  value="asc">Ascending</option >
+      </NativeSelect>
         </section>
+
       <ul>  {  articles.map((article) => {
       
        return  <Link to={`/articles/${article.article_id}`}> <ArticleCard article={article} key={article.article_id}/></Link>  

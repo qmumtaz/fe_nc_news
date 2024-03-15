@@ -5,12 +5,12 @@ import "../styling/articlecard.css"
 
 function TopicArticle({topic}) {
     const [article,setArticles] = useState([])
-    const topics = topic
+    
     useEffect(() => {
       
         getAllArticles().then((response) => {    
         const filtered =  response.filter((filteredArticles) => {
-           return filteredArticles.topic === topics;
+           return filteredArticles.topic === topic;
           })
           setArticles(filtered)
         });

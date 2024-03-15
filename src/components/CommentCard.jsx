@@ -1,9 +1,13 @@
 import React, { useState , useContext } from 'react'
 import "../styling/commentcard.css"
 import SortDateBy from '../utils/sortDate'
-import { MdDelete } from "react-icons/md";
+import DeleteIcon from '@mui/icons-material/Delete';
 import UserContext from './context/UserContext';
 import {deleteCommentById} from "../app"
+import Card from '@mui/material/Card';
+import Button from '@mui/material/Button';
+import Typography from '@mui/material/Typography';
+import IconButton from '@mui/material/IconButton';
 
 
 function CommentCard({comment, setUpVote, onDeleteComment}) {
@@ -30,14 +34,16 @@ function CommentCard({comment, setUpVote, onDeleteComment}) {
   return ( 
     <div> 
         {err ? <p>{err}</p> : null}
-      <div className="comment-card">
+      <Card className="comment-card">
       <div className="comment-author">{comment.author}  <div className='comment-date'>{SortDateBy(comment.created_at)}</div> </div>
-      <div className="comment-body"> {comment.body}</div>
+      <Typography  variant="body2" className="comment-body"> {comment.body}</Typography >
       
-      <div className="comment-votes">  <button onClick={() => setUpVote(comment.comment_id , 1)}><span className='up-arrow'>&#8593;</span></button> <button onClick={() => setUpVote(comment.comment_id , -1)}><span className='down-arrow'>&#8595;</span></button>   {comment.votes}  </div>
-      <div className='comment-delete'>  { showDelete ?  (<button onClick={(event) => deleteComment(event)}><MdDelete /></button>) : null}  
-      </div>
-    </div>
+      <div className="comment-votes">  
+      <Button size="small"  variant="outlined" onClick={() => setUpVote(comment.comment_id , 1)}><span className='up-arrow'>&#8593;</span></Button> 
+      <Button size="small" variant="outlined" onChange={() => setUpVote(comment.comment_id , -1)}><span className='down-arrow'>&#8595;</span></Button>   {comment.votes}  </div>
+      <IconButton aria-label="delete"  color="primary" className='comment-delete'>  { showDelete ?  (<DeleteIcon  size="small" onClick={(event) => deleteComment(event)}/>) : null}  
+      </IconButton>
+    </Card>
     </div>
   )
 }
