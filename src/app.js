@@ -79,6 +79,20 @@ const patchArticleById = (id , newVote) => {
   });
 }
 
+const postNewArticle = (postBody) => {
+  const url = `https://nc-news-9quh.onrender.com/api/articles`;
+  const articleData = {
+    author : postBody.author,
+      title : postBody.title,
+      body : postBody.body,
+      topic : postBody.topic,
+      article_img_url: postBody.article_img_url
+  }
+  return axios.post(url, articleData).then((response) => {
+    return response
+  });
+} 
+
 export {
   getAllArticles,
   getArticleById,
@@ -87,5 +101,6 @@ export {
   postCommentByArticleId,
   deleteCommentById,
   getTopic,
-  patchArticleById
+  patchArticleById,
+  postNewArticle
 };

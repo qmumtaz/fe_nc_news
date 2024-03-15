@@ -4,8 +4,10 @@ import ArticleCard from './ArticleCard';
 import {Link} from "react-router-dom";
 import {useSearchParams} from "react-router-dom"
 import NativeSelect from '@mui/material/NativeSelect';
+import Button from '@mui/material/Button';
 import Loading from './Loading';
 import "../styling/article.css"
+import PostArticle from './PostArticle';
 
 
 function Articles() {
@@ -73,7 +75,7 @@ function Articles() {
         <option  value="asc">Ascending</option >
       </NativeSelect>
         </section>
-
+        <Link to={`/postArticle`} className='article-link'> <Button> Post Article</Button>  </Link>  
       <ul>  {  articles.map((article) => {
       
        return  <Link to={`/articles/${article.article_id}`} className='article-link'> <ArticleCard article={article} key={article.article_id}/></Link>  

@@ -11,7 +11,7 @@ function Homepage() {
   return (
     <>
      <Typography variant='h3' className='homepage-header'> Welcome to NC News </Typography>
-    
+     <Typography variant='h6' className='homepage-header'> These are some of the last articles posted </Typography>
      <div className='homepage'>
      
      <Card sx={{ maxWidth: 345 }} className='homepage-card' >

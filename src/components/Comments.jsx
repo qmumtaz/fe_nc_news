@@ -52,7 +52,7 @@ function Comments({articleId}) {
 
 
 
- if (loading) {
+ if (loading && comments.length > 0) {
     return <Loading />
  }
 
