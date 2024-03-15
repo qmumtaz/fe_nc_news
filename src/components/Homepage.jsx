@@ -23,7 +23,7 @@ function Homepage() {
          alt="cooking"
        />
        <CardContent className='homepage-content'>
-         <Typography gutterBottom variant="h5" >
+         <Typography gutterBottom variant="h5" className='homepage-card-header' >
          The Notorious MSG’s Unlikely Formula For Success
          </Typography>
          <Typography variant="body2" color="text.secondary" className='homepage-section'>
@@ -33,7 +33,7 @@ function Homepage() {
          </Typography>
        </CardContent>
      </CardActionArea>
-     <CardActions>
+     <CardActions className='homepage-links'>
        <Button size="small" color="primary">
        <Link to="/articles" >
         Go to articles
@@ -47,11 +47,11 @@ function Homepage() {
        <CardMedia
          component="img"
          height="140"
-         image="https://images.pexels.com/photos/2403392/pexels-photo-2403392.jpeg?w=700&h=700"
-         alt="cooking"
+         image="https://images.pexels.com/photos/10845119/pexels-photo-10845119.jpeg?w=700&h=700"
+         alt="coding"
        />
        <CardContent className='homepage-content'>
-         <Typography gutterBottom variant="h5" >
+         <Typography gutterBottom variant="h5" className='homepage-card-header'>
          The battle for Node.js security has only begun
          </Typography>
          <Typography variant="body2" color="text.secondary" className='homepage-section'>
@@ -61,16 +61,15 @@ function Homepage() {
          </Typography>
        </CardContent>
      </CardActionArea>
-     <CardActions>
-       <Button size="small" color="primary">
+     <CardActions className='homepage-links'>
+       <Button size="small" color="primary" >
        <Link to="/articles" >
        Go to articles
       </Link>
        </Button>
      </CardActions>
    </Card>
- 
- 
+
   
      </div>
     </>

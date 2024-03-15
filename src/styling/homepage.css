@@ -12,7 +12,7 @@
 
 .homepage-card{
    margin: 10px;
-   text-align: center;
+    
    
 }
 
@@ -26,4 +26,20 @@
     overflow: hidden;
     text-overflow: ellipsis;
 
+}
+
+.homepage-card-header{
+    padding: 0;
+    font-size: 15px !important;
+}
+
+.homepage-section{
+    margin-top: 10px;
+padding: 20px;
+margin: 20px;
+}
+
+.homepage-links{
+    text-align: center !important;
+    justify-content: space-around
 }
