@@ -45,7 +45,7 @@ const handleCloseUserMenu = () => {
         <Box sx={{ flexGrow: 0 }} className="header-box">
           <Tooltip title="Open settings">
             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }} className='header-avatar'>
-              <Avatar alt="avatar" src={userLoggedIn.avatarUrl} />
+              <Avatar alt="avatar" src={userLoggedIn.avatarUrl}  sx={{ width: 24, height: 24 }} />
               <Typography variant="subtitle1" className='avatar-name'>{userLoggedIn.username}</Typography>
             </IconButton>
           </Tooltip>

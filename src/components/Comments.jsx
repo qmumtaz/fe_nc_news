@@ -20,7 +20,7 @@ function Comments({articleId}) {
 
  const setUpVote = (comment_id, votesComment) => {
   const patchComment = {
-    inc_votes : votesComment
+    inc_votes :  votesComment === "up" ? 1 : (votesComment === "down" ? -1 : 0 )
   }
 
     setComments((currentComments) => {

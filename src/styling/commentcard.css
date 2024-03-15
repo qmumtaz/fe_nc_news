@@ -25,6 +25,7 @@
     margin-left: 10px !important;
     line-height: 2 !important;
     font-size: 10px;
+    padding: 20px;
 }
 
 .comment-votes{
@@ -48,7 +49,12 @@ margin-left: 10px;
 
 }
 
-.comment-delete button{
+.card-votes{
+    height: 2px  !important;
+    width: 2px !important;
+}
 
-
-}   
+.comment-delete{
+    height: 1rem  !important;
+    width: 1rem !important;
+}

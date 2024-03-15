@@ -15,7 +15,6 @@ function CommentCard({comment, setUpVote, onDeleteComment}) {
   const [err, setErr] = useState(null);
   const [showDelete, setShowDelete] = useState(comment.author === userLoggedIn.username);
 
-
   
   const deleteComment = (event) => {
 
@@ -39,10 +38,15 @@ function CommentCard({comment, setUpVote, onDeleteComment}) {
       <Typography  variant="body2" className="comment-body"> {comment.body}</Typography >
       
       <div className="comment-votes">  
-      <Button size="small"  variant="outlined" onClick={() => setUpVote(comment.comment_id , 1)}><span className='up-arrow'>&#8593;</span></Button> 
-      <Button size="small" variant="outlined" onChange={() => setUpVote(comment.comment_id , -1)}><span className='down-arrow'>&#8595;</span></Button>   {comment.votes}  </div>
-      <IconButton aria-label="delete"  color="primary" className='comment-delete'>  { showDelete ?  (<DeleteIcon  size="small" onClick={(event) => deleteComment(event)}/>) : null}  
+      <Button className='card-votes'  variant="text" onClick={() => setUpVote(comment.comment_id , "up")}><span className='up-arrow'>&#8593;</span></Button> 
+      <Button className='card-votes'  variant="text" onClick={() => setUpVote(comment.comment_id , "down")}><span className='down-arrow'>&#8595;</span></Button>
+
+      {comment.votes} </div> 
+      <div>
+      <IconButton aria-label="delete"  color="primary" className='comment-delete'>  { showDelete ?  (<DeleteIcon className='comment-delete'  onClick={(event) => deleteComment(event)}/>) : null}  
       </IconButton>
+      </div>
+      
     </Card>
     </div>
   )
