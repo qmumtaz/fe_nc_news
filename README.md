@@ -11,7 +11,7 @@ Visit the deployed version of the app.
 - Browse through the list of articles.
 - Click on an article to read it and view/add comments.
 - Use the voting buttons to express your opinion on articles and comments.
-- Utilize the filter functionality to find articles by topics of interest.
+- Utilize the filter functionality to find articles by date or votes either ascending or descending.
 
 
 Backend Repository: https://github.com/qmumtaz/nc-news

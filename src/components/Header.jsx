@@ -33,7 +33,7 @@ const handleCloseUserMenu = () => {
 
 
   return (
-    <AppBar position="">
+    <AppBar position="static">
   <Container maxWidth="xxl">
     <Toolbar disableGutters>
       <Link to="/" className='news-icon'>
