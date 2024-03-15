@@ -9,6 +9,7 @@ import PostComment from './components/PostComment';
 import Topic from './components/Topic';
 import UserContext from "./components/context/UserContext"
 import ErrorPage from './components/ErrorPage';
+import PostArticle from './components/PostArticle';
 
 
 
@@ -30,6 +31,7 @@ function App() {
       <Route path='/articles/:article_id' element={<SingleArticle/>}/>
       <Route path='/article/:article_id/comments' element={<PostComment/>}/>
       <Route path='/topic' element={<Topic/>}/>
+      <Route path='/postArticle' element={<PostArticle/>}/>
     </Routes>
    </UserContext.Provider>
     
