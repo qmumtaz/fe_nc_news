@@ -6,6 +6,7 @@ import UserContext from './context/UserContext';
 import AppBar from '@mui/material/AppBar';
 import Toolbar from '@mui/material/Toolbar';
 import Avatar from '@mui/material/Avatar';
+import Container from '@mui/material/Container';
 import Stack from '@mui/material/Stack';
 import Typography from "@mui/material/Typography"
 import { Box, IconButton, Menu, MenuItem, Tooltip } from '@mui/material';
@@ -32,54 +33,55 @@ const handleCloseUserMenu = () => {
 
 
   return (
-    <AppBar  className='navbar'  position="static">
-       <Toolbar disableGutters>
-       
-       <Link to="/" > <TiNews className='news-icon' /> </Link> 
-       <Stack direction="row" spacing={2}  className='header-user'>
-        
-
-        <Box sx={{ flexGrow: 0 }} className="header-box">
-            <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }} className='header-avatar'>
-                <Avatar alt="avatar"   src={userLoggedIn.avatarUrl} />
-                <Typography variant="subtitle1" className='avatar-name'>{userLoggedIn.username}</Typography>
-              </IconButton>
-            </Tooltip>
-            <Menu
-              sx={{ mt: '45px' }}
-              id="menu-appbar"
-              anchorEl={anchorElUser}
-              anchorOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              keepMounted
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'right',
-              }}
-              open={Boolean(anchorElUser)}
-              onClose={handleCloseUserMenu}
-            >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
-            </Menu>
-          </Box>
-        
-       </Stack >
-       <Typography
-            variant="h6" className='nav-header'>NC News</ Typography>
+    <AppBar position="">
+  <Container maxWidth="xxl">
+    <Toolbar disableGutters>
+      <Link to="/" className='news-icon'>
+        <TiNews />
+        <Typography variant="h6" className='nav-header'>NC News</Typography>
+      </Link>
       
-        <nav className='nav-bar-links'> 
-        <Link to="/articles" > <Typography className='link-text'> Articles</Typography> </Link> 
-        <Link to="/topic" ><Typography className='link-text'> Topics</Typography></Link> 
-        </nav>
-        </Toolbar>
-    </AppBar >
+      <Stack direction="row" spacing={2} className='header-user'>
+        <Box sx={{ flexGrow: 0 }} className="header-box">
+          <Tooltip title="Open settings">
+            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }} className='header-avatar'>
+              <Avatar alt="avatar" src={userLoggedIn.avatarUrl} />
+              <Typography variant="subtitle1" className='avatar-name'>{userLoggedIn.username}</Typography>
+            </IconButton>
+          </Tooltip>
+          <Menu
+            sx={{ mt: '45px' }}
+            id="menu-appbar"
+            anchorEl={anchorElUser}
+            anchorOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            keepMounted
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}
+            open={Boolean(anchorElUser)}
+            onClose={handleCloseUserMenu}
+          >
+            {settings.map((setting) => (
+              <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                <Typography textAlign="center">{setting}</Typography>
+              </MenuItem>
+            ))}
+          </Menu>
+        </Box>
+      </Stack>
+     
+    </Toolbar>
+    <nav className='nav-bar-links'> 
+        <Link to="/articles" className='link-text'> Articles</Link> 
+        <Link to="/topic" className='link-text'> Topics</Link> 
+      </nav>
+  </Container>
+</AppBar>
+
   )
 }
 
