@@ -30,7 +30,7 @@ function TopicArticle({topic}) {
     <div>
         <ul>
             {article.map((article) => {
-                return <Link to={`/articles/${article.article_id}`}> <ArticleCard article={article} key={article.article_id} /> </ Link>
+                return <Link to={`/articles/${article.article_id}`} className='topic-link'> <ArticleCard article={article} key={article.article_id} /> </ Link>
             })}
         </ul>
     </div>

@@ -76,7 +76,7 @@ function Articles() {
 
       <ul>  {  articles.map((article) => {
       
-       return  <Link to={`/articles/${article.article_id}`}> <ArticleCard article={article} key={article.article_id}/></Link>  
+       return  <Link to={`/articles/${article.article_id}`} className='article-link'> <ArticleCard article={article} key={article.article_id}/></Link>  
         
       })}</ul>
     </>
