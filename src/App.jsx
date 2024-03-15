@@ -8,6 +8,8 @@ import SingleArticle from './components/SingleArticle';
 import PostComment from './components/PostComment';
 import Topic from './components/Topic';
 import UserContext from "./components/context/UserContext"
+import ErrorPage from './components/ErrorPage';
+
 
 
 function App() {
@@ -20,7 +22,10 @@ function App() {
    <UserContext.Provider value={{userLoggedIn : userLoggedIn , setLoggedInUser : setLoggedInUser}} >
    <Header />
    <Routes>
+   <Route path="*" element={<ErrorPage />} />
+   <Route path="/errorpage" element={<ErrorPage />} />
     <Route path='/' element={<Homepage/>}/>
+    
       <Route path='/articles' element={<Articles/>}/>
       <Route path='/articles/:article_id' element={<SingleArticle/>}/>
       <Route path='/article/:article_id/comments' element={<PostComment/>}/>

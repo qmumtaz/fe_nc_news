@@ -7,27 +7,30 @@
   }
   
 .single-title{
-  background-color: #f0f0f0;
+
   display: flex;
   margin-bottom: 20px;
 }
 
   .single-title{
    justify-content: center;
-    font-size: 2em;
+    font-size: 2em !important;
+
   }
   .single-author{
     display: flex;
-    font-size: 10px;
+    font-size: 10px !important;
     flex-direction: column;
     margin: 10px;
-    font-weight: bold;
+    font-weight: bold !important;
   }
 
   .single-topic{
     font-size: 0.75rem;
     line-height: 1rem;
     border: 0.5px solid green;
+    color: white;
+   
     padding: 5px;
     border-radius: 10px;
    
@@ -35,9 +38,10 @@
   }
   
   .single-body {
-    display: block;
-    font-size: 12px;
-    text-align: left;
+    display: block !important;
+    font-size: 12px !important;
+    text-align: left !important;
+    margin: 15px !important;
   }
   
   

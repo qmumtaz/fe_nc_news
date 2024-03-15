@@ -1,15 +1,16 @@
 .article-card {
     border: 1px solid #ddd;
-    padding: 15px;
+    padding: 20px;
     margin: 10px;
-    border-radius: 8px;
-    display: block;
+    
   }
   
 
   .article-author {
     font-weight: bold;
+    margin-bottom: 10px !important;
     display: flex;
+    margin: 10px;
   }
   
   .article-title {
@@ -20,6 +21,7 @@
   .topic {
     color: #888;
     margin: 10px;
+    font-size: 14px;
   }
 
   .article-date{

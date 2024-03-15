@@ -3,6 +3,8 @@ import { useParams  } from "react-router-dom";
 import { useNavigate  } from "react-router-dom";
 import "../styling/postcomment.css";
 import { postCommentByArticleId } from "../app";
+import TextField from '@mui/material/TextField';
+import Button from '@mui/material/Button';
 
 
 function PostComment() {
@@ -33,13 +35,13 @@ const handleSubmit = (event) => {
     <div className="postComment" onSubmit={handleSubmit}>
       <form className="post-form">
         <label htmlFor=""> Username</label>
-        <input type="text" className="post-input" required value={newUsername} 
+        <TextField id="" label="" variant="outlined" type="text" className="post-input" required value={newUsername} 
             placeholder="grumpy19"
         onChange={(event) => setUsername(event.target.value)}  />
         <label htmlFor=""> Body</label>
-        <textarea
+        <textarea id="" label="" variant="outlined" 
           name=""
-          id=""
+          
           cols="30"
           rows="10"
           className="post-text"
@@ -47,7 +49,7 @@ const handleSubmit = (event) => {
           required
           value={inputBody}
         ></textarea>
-        <button type="submit"> Submit</button>
+        <Button variant="contained" color="success"n type="submit"> Submit</Button>
       </form>
     </div>
   );
