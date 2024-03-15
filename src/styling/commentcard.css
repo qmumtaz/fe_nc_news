@@ -12,7 +12,12 @@
     font-weight: bold;
     font-size: 15px;
     display: flex;
+   margin: 10px !important;
     
+}
+
+.comment-avatar{
+    margin-right: 2px;
 }
 
 .comment-date{

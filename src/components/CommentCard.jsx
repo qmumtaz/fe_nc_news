@@ -8,6 +8,7 @@ import Card from '@mui/material/Card';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
+import Avatar from '@mui/material/Avatar';
 
 
 function CommentCard({comment, setUpVote, onDeleteComment}) {
@@ -34,7 +35,10 @@ function CommentCard({comment, setUpVote, onDeleteComment}) {
     <div> 
         {err ? <p>{err}</p> : null}
       <Card className="comment-card">
-      <div className="comment-author">{comment.author}  <div className='comment-date'>{SortDateBy(comment.created_at)}</div> </div>
+      
+      <Typography className="comment-author">  <Avatar alt="avatar" className='comment-avatar' src={comment.avatarUrl}  sx={{ width: 24, height: 24  }} />
+      {comment.author}  <div className='comment-date'>{SortDateBy(comment.created_at)}</div> 
+      </Typography>
       <Typography  variant="body2" className="comment-body"> {comment.body}</Typography >
       
       <div className="comment-votes">  
